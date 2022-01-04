@@ -30,6 +30,9 @@ export default function WorkHistory() {
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
                     </tr>
                     <tr>
                     <td>2</td>
