@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Col, Row, Button} from 'react-bootstrap';
-import '../../style_components/MyProfile.css'
+import '../../style_components/MyProfile.css';
+import DateObject from "react-date-object";
 
 export default class MyProfile extends React.Component { 
     constructor(props) {
@@ -18,8 +19,12 @@ export default class MyProfile extends React.Component {
             bsbNum: "",
             isDisplayAccNum: true,
             accNum: "",
+            dateRegister: "",
+            latestUpdate: "",
         };
     }
+
+    date = new DateObject();
 
     componentDidMount() {
         //turn on database and input the details on the state if any details, it will be using RDS for storing all information and data
@@ -422,7 +427,16 @@ export default class MyProfile extends React.Component {
                             Date Register
                         </Form.Label>
                         <Col sm="10">
-                            <Form.Control plaintext readOnly defaultValue={new Date()}/>
+                            <Form.Control plaintext readOnly defaultValue={this.date.format("DD/MMM/YYYY")}/>
+                        </Col>
+                    </Form.Group>
+
+                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextDateRegister">
+                        <Form.Label column sm="2">
+                            Latest Update
+                        </Form.Label>
+                        <Col sm="10">
+                            <Form.Control plaintext readOnly defaultValue={this.date.format("DD/MMM/YYYY")}/>
                         </Col>
                     </Form.Group>
                     
